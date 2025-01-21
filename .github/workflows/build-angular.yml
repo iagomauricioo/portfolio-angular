@@ -37,4 +37,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: angular-build
-          path: dist/
+          path: dist/portfolio/browser
