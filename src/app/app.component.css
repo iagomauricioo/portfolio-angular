@@ -1,0 +1,122 @@
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(
+      20px
+    ); /* Ajuste a distância que você deseja para a descida */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  animation: moveUpDown 2s ease-in-out infinite;
+}
+
+nav {
+  background-color: #21243d;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+}
+
+nav a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efeito de hover */
+nav a:hover {
+  color: #038bda; /* Cor de destaque */
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Criando o sublinhado animado */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #038bda;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+main {
+  display: flex;
+  margin-left: 300px;
+  margin-top: 50px;
+}
+
+#container-text {
+  width: 50%;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 50px;
+  margin-bottom: 0;
+}
+
+p {
+  font-size: 16;
+}
+
+strong {
+  font-weight: 600;
+}
+
+#social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.social-icon {
+  font-size: 40px;
+  color: #21243d;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #038bda;
+}
+
+#elipse {
+  width: 370px;
+  position: relative;
+  top: 25%;
+  left: 50%;
+  z-index: -1;
+}
+
+#photo {
+  width: 350px;
+  position: absolute;
+  border-radius: 50%;
+  top: 24%;
+  right: 16%;
+}

@@ -1,0 +1,19 @@
+/* Rectangle 10 */
+button {
+    width: 208px;
+    height: 47px;
+    color: white;
+    font-weight: 500;
+    font-size: 22px;
+    background: #21243D;
+    border-radius: 75px;
+    border: 0;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transição suave */
+  }
+  
+  button:hover {
+    background: #038bda; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o tamanho do botão */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+  }

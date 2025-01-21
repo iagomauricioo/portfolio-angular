@@ -1,0 +1,9 @@
+@import "primeicons/primeicons.css";
+
+* {
+  font-weight: 400;
+  font-size: 20px;
+  font-family: "Heebo", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
