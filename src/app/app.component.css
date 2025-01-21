@@ -3,9 +3,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(
-      20px
-    ); /* Ajuste a distância que você deseja para a descida */
+    transform: translateY(20px);
   }
   100% {
     transform: translateY(0);
@@ -14,6 +12,9 @@
 
 h1 {
   animation: moveUpDown 2s ease-in-out infinite;
+  font-weight: 600;
+  font-size: 50px;
+  margin-bottom: 0;
 }
 
 nav {
@@ -37,12 +38,12 @@ nav a {
 
 /* Efeito de hover */
 nav a:hover {
-  color: #038bda; /* Cor de destaque */
+  color: #038bda;
   transform: scale(1.1);
   cursor: pointer;
 }
 
-/* Criando o sublinhado animado */
+/* Sublinhado animado */
 nav a::after {
   content: "";
   position: absolute;
@@ -74,14 +75,8 @@ main {
   flex-direction: column;
 }
 
-h1 {
-  font-weight: 600;
-  font-size: 50px;
-  margin-bottom: 0;
-}
-
 p {
-  font-size: 16;
+  font-size: 16px;
 }
 
 strong {
@@ -106,17 +101,98 @@ strong {
 }
 
 #elipse {
-  width: 370px;
+  width: 400px;
   position: relative;
-  top: 25%;
+  top: 22%;
   left: 50%;
   z-index: -1;
 }
 
 #photo {
-  width: 350px;
+  width: 400px;
   position: absolute;
   border-radius: 50%;
-  top: 24%;
+  top: 21%;
   right: 16%;
+}
+
+
+@media (max-width: 1440px) {
+  #photo {
+    left: 62%;
+  }
+
+  #elipse {
+    left: 35%;
+  }
+
+  #container-image {
+  }
+}
+
+/* Media queries */
+@media (max-width: 1024px) {
+  main {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  #container-text {
+    margin-top: 180px;
+    width: 80vw;
+    text-align: center;
+  }
+
+  #social-icons {
+    justify-content: center;
+    align-items: center;
+  }
+
+  #elipse {
+    position: absolute;
+    top: 4%;
+    left: 37%;
+  }
+
+  #photo {
+    position: absolute;
+    top: 2%;
+    left: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  #elipse {
+    width: 230px;
+  }
+
+  #photo {
+    width: 230px;
+  }
+}
+
+@media (max-width: 425px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  #elipse {
+    width: 200px;
+    left: 22%;
+  }
+
+  #photo {
+    width: 200px;
+    left: 25%;
+  }
 }
