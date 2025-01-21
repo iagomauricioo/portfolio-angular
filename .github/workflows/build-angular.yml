@@ -1,0 +1,39 @@
+name: Build Angular Project
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout o código do repositório
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Configura o Node.js (substitua a versão pela que o Angular precisa)
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Substitua pela versão necessária do Node.js
+
+      # Instalar dependências
+      - name: Install dependencies
+        run: npm install
+
+      # Build do projeto Angular
+      - name: Build Angular Project
+        run: ng build
+
+      # Salvar artefatos do build (opcional, para guardar os arquivos gerados)
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: angular-build
+          path: dist/
