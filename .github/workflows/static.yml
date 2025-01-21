@@ -29,36 +29,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      # Checkout the repository code
       - name: Checkout
         uses: actions/checkout@v4
-
-      # Setup Node.js for Angular build
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18' # Specify the Node.js version required for Angular
-
-      # Install Angular dependencies
-      - name: Install dependencies
-        run: npm install
-
-      # Build Angular project
-      - name: Build Angular project
-        run: npm run build
-
-      # Setup Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
-      # Upload build output to GitHub Pages artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload Angular build output
+          # Upload entire repository
           path: 'dist/portfolio/browser'
-
-      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
